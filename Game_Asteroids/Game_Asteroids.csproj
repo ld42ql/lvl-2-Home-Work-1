@@ -54,8 +54,14 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ShipObject1.cs" />
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="MainScreen.resx">
@@ -63,13 +69,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +84,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\asteroid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\start_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

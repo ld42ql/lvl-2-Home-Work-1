@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Game_Asteroids
 {
-   static class Game
+    class Game
     {
         private static BufferedGraphicsContext context;
         public static BufferedGraphics Buffer;
@@ -17,6 +17,13 @@ namespace Game_Asteroids
         /// Высота
         /// </summary>
         public static int Height { get; set; }
+        public int ValueAstr { get
+            {
+                return valueAstr;
+            } set => valueAstr = value * 4 + 70; }
+
+        private int valueAstr;
+
 
         static Game()
         {
@@ -26,12 +33,12 @@ namespace Game_Asteroids
         public static BaseObject[] arrayObject;
        
 
-        public static void LoadObject()
+        public virtual void LoadObject()
         {
-            arrayObject = new BaseObject[250];
+            arrayObject = new BaseObject[valueAstr];
 
             for (int i = 0; i < 69; i++)
-                arrayObject[i] = new Star(new Point(random.Next(0, 800), (i - 30) * random.Next(2, 30)), new Point(-i, 0), new Size(5, 5));
+                arrayObject[i] = new Star(new Point(random.Next(0, 800), (i - 30) * random.Next(2, 30)), new Point(-i, 0), new Size(5 + i / 8, 5 + i / 8));
 
             arrayObject[69] = new FonObject(new Point(600, 50), new Point(1, 0));
 
@@ -50,7 +57,7 @@ namespace Game_Asteroids
         /// Создаем поверхность рисования и связываем его с формой
         /// </summary>
         /// <param name="form"></param>
-        public static void Init(Form form)
+        public void Init(Form form)
         {
             Graphics graphics;
 
@@ -72,7 +79,7 @@ namespace Game_Asteroids
 
        
 
-        public static void Draw()
+        public void Draw()
         {
             Buffer.Graphics.Clear(Color.Black);
             BaseObject.ClearScreen();
@@ -91,7 +98,7 @@ namespace Game_Asteroids
             }
         }
 
-        private static void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             Update();
             Draw();

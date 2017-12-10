@@ -17,7 +17,7 @@ namespace Game_Asteroids
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(astraImg, pos.X, pos.Y, 10, 10);
+            Game.Buffer.Graphics.DrawImage(astraImg, pos.X, pos.Y, size.Height, size.Width);
         }
 
         public override void Update()
