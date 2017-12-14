@@ -8,7 +8,7 @@ namespace Game_Asteroids
     {
         private static BufferedGraphicsContext context;
         public static BufferedGraphics Buffer;
-       static Random random = new Random();
+
         /// <summary>
         /// Ширина
         /// </summary>
@@ -25,10 +25,7 @@ namespace Game_Asteroids
         private int valueAstr;
 
 
-        static Game()
-        {
-
-        }
+        static Game() { }
         
         public static BaseObject[] arrayObject;
        
@@ -38,7 +35,8 @@ namespace Game_Asteroids
             arrayObject = new BaseObject[valueAstr];
 
             for (int i = 0; i < 69; i++)
-                arrayObject[i] = new Star(new Point(random.Next(0, 800), (i - 30) * random.Next(2, 30)), new Point(-i, 0), new Size(5 + i / 8, 5 + i / 8));
+                arrayObject[i] = new Star(new Point(Resources.random.Next(0, 800), (i - 30) *
+                    Resources.random.Next(2, 30)), new Point(-i, 0), new Size(5 + i / 8, 5 + i / 8));
 
             arrayObject[69] = new FonObject(new Point(600, 50), new Point(1, 0));
 
@@ -46,11 +44,11 @@ namespace Game_Asteroids
 
             for (int i = 71; i < arrayObject.Length; i++)
             {
-                int a = random.Next(15, 30);
-                arrayObject[i] = new BaseObject(new Point(random.Next(0, 800), i * random.Next(2, 20)), new Point(10 - i, 10 - i),
+                int a = Resources.random.Next(15, 30);
+                arrayObject[i] = new BaseObject(new Point(Resources.random.Next(0, 800), i *
+                    Resources.random.Next(2, 20)), new Point(10 - i, 10 - i),
                     new Size(i % 2 == 0 ? a : 10, i % 2 == 0 ? a : 10));
             }
-            
         }
 
         /// <summary>

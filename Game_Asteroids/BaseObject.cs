@@ -12,9 +12,7 @@ namespace Game_Asteroids
         protected Point pos;
         protected Point dir;
         protected Size size;
-        Image asteridImg = Image.FromFile(@"img\asteroid.png");
-        static Image background = Image.FromFile(@"img\Background.jpg");
-        Random random = new Random();
+        
 
         bool flag = true;
 
@@ -37,9 +35,12 @@ namespace Game_Asteroids
 
         public virtual void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(asteridImg, pos.X, pos.Y, size.Width, size.Height);
+            Game.Buffer.Graphics.DrawImage(Resources.asteroid, pos.X, pos.Y, size.Width, size.Height);
         }
 
+        /// <summary>
+        /// Прописываем движение объектов
+        /// </summary>
         public virtual void Update()
         {
             if (flag)
@@ -56,7 +57,7 @@ namespace Game_Asteroids
                 }
                 if (pos.Y < 0 || pos.Y > Game.Height - 20)
                 {
-                    pos.X = random.Next(10, 560);
+                    pos.X = Resources.random.Next(10, 560);
                     dir.Y = -dir.Y;
                 }
             }
@@ -75,7 +76,7 @@ namespace Game_Asteroids
 
         static public void ClearScreen()
         {
-            Game.Buffer.Graphics.DrawImage(background, 0, 0);
+            Game.Buffer.Graphics.DrawImage(Resources.background, 0, 0);
         }
     }
 }

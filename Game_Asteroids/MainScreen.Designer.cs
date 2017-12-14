@@ -70,7 +70,7 @@ namespace Game_Asteroids
             this.btnRecords.TabIndex = 1;
             this.btnRecords.Text = "Records";
             this.btnRecords.UseVisualStyleBackColor = false;
-            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
+            this.btnRecords.Click += new System.EventHandler(this.BtnRecords_Click);
             // 
             // btnExit
             // 
@@ -87,7 +87,7 @@ namespace Game_Asteroids
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BoxRecords
             // 
