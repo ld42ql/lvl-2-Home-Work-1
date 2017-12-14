@@ -62,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.cs" />
     <Compile Include="ShipObject1.cs" />
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="MainScreen.resx">
@@ -84,9 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\asteroid.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\img\sun.png" />

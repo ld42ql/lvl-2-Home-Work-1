@@ -39,8 +39,10 @@ namespace Game_Asteroids
         private void NewGame()
         {
             HideMenu();
-            Game game = new Game();
-            game.ValueAstr = 20;
+            Game game = new Game
+            {
+                ValueAstr = 20
+            };
             game.Init(this);
             game.Draw();
         }
@@ -67,7 +69,7 @@ namespace Game_Asteroids
             Lbl.Visible = true;
         }
 
-        private void btnRecords_Click(object sender, EventArgs e)
+        private void BtnRecords_Click(object sender, EventArgs e)
         {
             HideMenu();
             BoxRecords.Visible = true;
@@ -83,7 +85,7 @@ namespace Game_Asteroids
             BtnReturn.Visible = false;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

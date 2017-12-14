@@ -9,7 +9,6 @@ namespace Game_Asteroids
 {
     class ShipObject : BaseObject
     {
-        Image starShip = Image.FromFile(@"img\starShip.png");
 
         public ShipObject()
         {
@@ -17,7 +16,7 @@ namespace Game_Asteroids
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(starShip, 100, 450, 20, 37);
+            Game.Buffer.Graphics.DrawImage(Resources.starShip, 100, 450, 20, 37);
         }
     }
 }

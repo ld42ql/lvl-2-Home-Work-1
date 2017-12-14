@@ -7,9 +7,8 @@ namespace Game_Asteroids
 {
     class Star : BaseObject
     {
-        Random random = new Random();
 
-        Image astraImg = Image.FromFile(@"img\astra.png");
+        
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
 
@@ -17,7 +16,7 @@ namespace Game_Asteroids
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(astraImg, pos.X, pos.Y, size.Height, size.Width);
+            Game.Buffer.Graphics.DrawImage(Resources.astra, pos.X, pos.Y, size.Height, size.Width);
         }
 
         public override void Update()
@@ -26,9 +25,7 @@ namespace Game_Asteroids
             if (pos.X < 0)
             {
                 pos.X = Game.Width;
-              
             }
-          
         }
     }
 }

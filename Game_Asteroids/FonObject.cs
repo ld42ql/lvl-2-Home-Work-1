@@ -9,8 +9,10 @@ namespace Game_Asteroids
 {
     class FonObject : BaseObject
     {
-        Image sun = Image.FromFile(@"img\sun.png");
-
+        
+        /// <summary>
+        /// Объект для фона, звезда
+        /// </summary>
         public FonObject (Point pos, Point dir) : base(pos, dir)
         {
 
@@ -19,8 +21,9 @@ namespace Game_Asteroids
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(sun, pos.X, pos.Y);
+            Game.Buffer.Graphics.DrawImage(Resources.sun, pos.X, pos.Y);
         }
+
         public override void Update()
         {
             pos.X -= dir.X + 1;
